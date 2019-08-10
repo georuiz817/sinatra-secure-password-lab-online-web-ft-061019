@@ -45,9 +45,9 @@ class ApplicationController < Sinatra::Base
   when params[:username].empty?
     do  redirect '/failure'
   when params[:password].empty? 
-    redirect '/failure'
+   do redirect '/failure'
   when user && user.authenticate(params["password"])
-      session[:user_id] = user.id 
+  do    session[:user_id] = user.id 
       redirect '/account'
     end
   end
