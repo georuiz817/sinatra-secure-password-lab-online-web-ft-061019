@@ -42,14 +42,11 @@ class ApplicationController < Sinatra::Base
   post "/login" do
   if params[:username].empty?
       redirect '/failure'
-     if user.save
-      redirect '/login'
-    else
-      redirect '/failure'
-    end 
+    end
+  if params[:password].empty? 
+    redirect '/failure'
   end
-  
-  end
+end
 
   get "/failure" do
     erb :failure
