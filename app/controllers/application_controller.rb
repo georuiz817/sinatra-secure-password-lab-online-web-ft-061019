@@ -41,9 +41,9 @@ class ApplicationController < Sinatra::Base
 
   post "/login" do
   user = User.find_by(username: params["username"])
-  case parms 
+  case parmas 
   when params[:username].empty?
-      redirect '/failure'
+    do  redirect '/failure'
   when params[:password].empty? 
     redirect '/failure'
   when user && user.authenticate(params["password"])
