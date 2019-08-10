@@ -43,9 +43,10 @@ class ApplicationController < Sinatra::Base
   if params[:username].empty?
       redirect '/failure'
     end
-  if params[:password].empty? 
+  elsif params[:password].empty? 
     redirect '/failure'
   end
+  
 end
 
   get "/failure" do
